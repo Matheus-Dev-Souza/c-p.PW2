@@ -23,6 +23,7 @@ app.use(fileUpload());
 // Configurar para servir arquivos estáticos da pasta public
 app.use(express.static('public'));
 
+
 // Modelo do MongoDB
 const Placa = mongoose.model('Placa', new mongoose.Schema({
     placa: String,
