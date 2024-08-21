@@ -58,7 +58,7 @@ app.post('/cadastroPlaca', async (req, res) => {
     console.log('Cidade:', cidade);
     console.log('Nome do arquivo da foto:', foto.name);
 
-    const fotoPath = path.join(__dirname, 'uploads', foto.name);
+    const fotoPath = path.join(__dirname, 'public/uploads', foto.name);
     await foto.mv(fotoPath);
 
     try {
