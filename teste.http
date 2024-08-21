@@ -1,0 +1,14 @@
+### Requisição POST para /cadastroPlaca
+POST http://localhost:3000/cadastroPlaca
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="foto"; filename="test.jpeg"
+Content-Type: image/jpeg
+
+< \Users\Bruno Rocha Sampaio\Desktop\placa.jpeg
+--boundary
+Content-Disposition: form-data; name="cidade"
+
+São Paulo
+--boundary--
