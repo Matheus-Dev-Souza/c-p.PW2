@@ -9,11 +9,9 @@ const PDFDocument = require('pdfkit');
 
 // Conectando ao MongoDB
 const mongoUri = process.env.MONGODB_URI;
-mongoose.connect(mongoUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => console.log('Conectado ao MongoDB'))
-.catch((error) => console.error('Erro ao conectar ao MongoDB:', error));
+mongoose.connect(mongoUri)
+    .then(() => console.log('Conectado ao MongoDB'))
+    .catch((error) => console.error('Erro ao conectar ao MongoDB:', error));
 
 const app = express();
 
