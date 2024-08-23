@@ -7,20 +7,19 @@ const fs = require('fs');
 const Tesseract = require('tesseract.js');
 const PDFDocument = require('pdfkit');
 
+const app = express();
+
 // Conectando ao MongoDB
 const mongoUri = process.env.MONGODB_URI;
 mongoose.connect(mongoUri)
     .then(() => console.log('Conectado ao MongoDB'))
     .catch((error) => console.error('Erro ao conectar ao MongoDB:', error));
 
-const app = express();
-
 // Middleware para upload de arquivos
 app.use(fileUpload());
 
 // Configurar para servir arquivos estáticos da pasta public
-app.use(express.static('public'));
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Modelo do MongoDB
 const Placa = mongoose.model('Placa', new mongoose.Schema({
@@ -120,6 +119,7 @@ app.get('/consulta/:placa', async (req, res) => {
     res.json(registro);
 });
 
+// Inicia o servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
