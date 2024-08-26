@@ -23,27 +23,26 @@ function displayResponse(elementId, message) {
     }
   });
   
-  // Evento de consulta de placa
-  document.getElementById('consultaPlacaForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-  
-    const placa = document.getElementById('placa').value;
-  
-    try {
-      const response = await fetch(`/consulta/${placa}`, {
-        method: 'GET',
+// Evento de consulta de placa
+document.getElementById('consultaPlacaForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const placa = document.getElementById('placa').value;
+
+  try {
+      const response = await fetch(`/consulta/${encodeURIComponent(placa)}`, {
+          method: 'GET',
       });
       const data = await response.json();
       if (data.error) {
-        displayResponse('consultaResponse', data.error);
+          displayResponse('consultaResponse', data.error);
       } else {
-        displayResponse('consultaResponse', JSON.stringify(data));
+          displayResponse('consultaResponse', JSON.stringify(data));
       }
-    } catch (error) {
+  } catch (error) {
       displayResponse('consultaResponse', 'Erro ao consultar placa.');
-    }
-  });
-  
+  }
+});
   // Evento de gerar relatório por cidade
   document.getElementById('relatorioCidadeForm').addEventListener('submit', async function (e) {
     e.preventDefault();
