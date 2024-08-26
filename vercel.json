@@ -8,8 +8,19 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "server.js"
+      "src": "/cadastroPlaca",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/consulta/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/relatorio/cidade/(.*)",
+      "dest": "/server.js"
     }
-  ]
+  ],
+  "static": {
+    "public": "public"
+  }
 }
