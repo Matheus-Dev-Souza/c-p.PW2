@@ -57,7 +57,14 @@ app.post('/cadastroPlaca', async (req, res) => {
     console.log('Cidade:', cidade);
     console.log('Nome do arquivo da foto:', foto.name);
 
-    const fotoPath = path.join(__dirname, 'public/uploads', foto.name);
+    const uploadDir = path.join(__dirname, 'public', 'uploads');
+    const fotoPath = path.join(uploadDir, foto.name);
+
+    // Verifica se o diretório existe, se não, cria
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
     await foto.mv(fotoPath);
 
     try {
