@@ -1,7 +1,10 @@
+Ótimo! Vamos adicionar o próximo passo ao README:
+
+---
+
 ## Preparação do Ambiente na AWS
 
 Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os passos abaixo:
-
 
 ### Passo 1: Criar 2 VPCs
 
@@ -30,3 +33,22 @@ Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os 
      - VPC: `vpc-banco01`
      - CIDR IPv4: `172.31.1.0/24`
 4. Certifique-se de que ambas as subnets estejam no estado "Available".
+
+### Passo 3: Criar um Domínio no SageMaker
+
+1. Acesse o console de gerenciamento da AWS.
+2. Navegue até a seção **SageMaker**.
+3. No menu à esquerda, selecione **Studio** e depois **Domínios**.
+4. Clique em **Criar domínio**.
+5. Preencha as informações necessárias, como nome do domínio e configurações de rede.
+6. Clique em **Criar** e aguarde até que o status do domínio esteja "Pronto".
+
+### Passo 4: Criar um Perfil de Usuário para o Studio
+
+1. No console do SageMaker, vá até a seção **Studio**.
+2. Selecione o domínio que você criou anteriormente.
+3. Clique em **Perfis de usuário**.
+4. Clique em **Adicionar usuário**.
+5. Preencha as informações necessárias, como nome do usuário e permissões.
+6. Clique em **Enviar** e aguarde até que o perfil esteja pronto para uso.
+
