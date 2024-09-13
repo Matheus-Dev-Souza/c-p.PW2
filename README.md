@@ -1,7 +1,3 @@
-Ótimo! Vamos adicionar o próximo passo ao README:
-
----
-
 ## Preparação do Ambiente na AWS
 
 Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os passos abaixo:
