@@ -46,5 +46,26 @@ Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os 
 3. Clique em **Perfis de usuário**.
 4. Clique em **Adicionar usuário**.
 5. Preencha as informações necessárias, como nome do usuário e permissões.
-6. Clique em **Enviar** e aguarde até que o perfil esteja pronto para uso.
+6. Clique em **Criar** e aguarde até que o perfil esteja pronto para uso.
 
+### Passo 5: Criar um Espaço no Jupyter
+
+1. No console do SageMaker, vá até a seção **Studio**.
+2. Selecione o perfil de usuário que você criou anteriormente.
+3. Clique em **Iniciar Studio**.
+4. No ambiente do Studio, clique em **File** > **New** > **Notebook**.
+5. Escolha a instância de computação e o kernel desejado para o seu notebook.
+6. Clique em **Enviar** para criar o espaço no Jupyter.
+
+### Passo 6: Clonar o Repositório no GitHub
+
+1. No Jupyter Notebook, abra um novo terminal.
+2. No terminal, digite o seguinte comando para clonar o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
+3. Navegue até o diretório do repositório clonado:
+   ```bash
+   cd seu-repositorio
+   ```
+4. Agora você pode começar a trabalhar com os arquivos do repositório no Jupyter Notebook.
