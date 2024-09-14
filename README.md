@@ -98,7 +98,7 @@ Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os 
 5. Escolha a instância de computação e o kernel desejado para o seu notebook.
 6. Clique em **Enviar** para criar o espaço no Jupyter.
 
-<h3>:computer: Clonagem</h3>
+<h3>:Deploy da API</h3>
 <p>Como clonar o projeto:</p>
 
 <ol type="1">
