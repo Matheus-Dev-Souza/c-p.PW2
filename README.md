@@ -146,7 +146,20 @@ docker compose up
 <ul>
   <li>Configuração inicial do ambiente AWS para integrar todos os serviços.</li>
   <li>Garantir a escalabilidade do serviço para um volume maior de inferências.</li>
+  <li>Treinamento do modelo de machine learning</li>
+  <li>Comunicação e planejamento</li>
 </ul>
+
+<h2 id="liçoes aprendidas">❗ Dificuldades Conhecidas</h2>
+<ul>
+  <li>Importância do planejamento colaborativo</li>
+  <li>Gestão eficiente de tempo</li>
+  <li>Comunicação constante e transparente</li>
+  <li>Integração de múltiplos serviços na AWS</li>
+  <li>Versão e controle do código com Git</li>
+  
+</ul>
+
 
 <h2 id="contributors">🤝 Colaboradores</h2>
 
