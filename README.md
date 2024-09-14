@@ -98,7 +98,91 @@ Antes de usar a aplicação, é necessário preparar o ambiente na AWS. Siga os 
 5. Escolha a instância de computação e o kernel desejado para o seu notebook.
 6. Clique em **Enviar** para criar o espaço no Jupyter.
 
-<h3>:Deploy da API</h3>
+### 📌 Passo a Passo: Criação de um RDS com PostgreSQL
+
+1. **Acesse o Console da AWS**:
+   - Navegue até o console de gerenciamento da AWS e faça login com suas credenciais.
+
+2. **Navegue até o RDS**:
+   - No painel principal, procure e clique na opção **RDS** (Relational Database Service).
+
+3. **Criar uma Instância de Banco de Dados**:
+   - No painel do RDS, clique em **Create database**.
+   
+4. **Escolher o Modo de Criação**:
+   - Selecione **Standard Create** para obter mais opções de configuração.
+
+5. **Selecione o Mecanismo do Banco de Dados**:
+   - Em **Engine options**, selecione **PostgreSQL** como o mecanismo do banco de dados.
+
+6. **Defina a Versão do PostgreSQL**:
+   - Escolha a versão desejada do PostgreSQL (recomenda-se utilizar a versão mais recente compatível com seu sistema).
+
+7. **Configurações da Instância**:
+   - Escolha o tipo de instância que atenda às suas necessidades (por exemplo, `db.t3.micro` para uma opção de uso gratuito).
+   - Defina o nome da instância do banco de dados no campo **DB instance identifier** (Ex: `my-postgresql-db`).
+
+8. **Configurar Autenticação de Usuário**:
+   - Defina um **master username** (nome de usuário principal do banco de dados).
+   - Defina e confirme a senha do usuário principal.
+
+9. **Configurações de Rede**:
+   - Em **Connectivity**, selecione a VPC desejada para hospedar seu banco de dados.
+   - Caso queira que o banco seja acessível pela internet, habilite a opção **Public access**.
+
+10. **Configurações de Armazenamento**:
+    - Defina o tamanho do armazenamento de acordo com as necessidades do projeto (o mínimo recomendado pode ser 20 GB para testes).
+
+11. **Criptografia e Backups**:
+    - Habilite backups automáticos e selecione o período de retenção desejado.
+
+12. **Finalizar Criação**:
+    - Revise as configurações e clique em **Create database**.
+    - Aguarde até que o status do RDS esteja como **Available**.
+
+13. **Conectar-se ao Banco de Dados**:
+    - Após a criação, você verá os detalhes da conexão, incluindo o endpoint do banco de dados, que será usado para se conectar a ele. Use o cliente PostgreSQL (como pgAdmin ou o terminal) para se conectar usando o endpoint, nome de usuário e senha definidos.
+
+---
+
+### 📌 Passo a Passo: Criação de um Bucket no S3
+
+1. **Acesse o Console da AWS**:
+   - Acesse o console de gerenciamento da AWS e faça login com suas credenciais.
+
+2. **Navegue até o Amazon S3**:
+   - No painel principal, pesquise por **S3** e clique para abrir o serviço de armazenamento S3.
+
+3. **Criar um Novo Bucket**:
+   - No painel do S3, clique em **Create bucket**.
+
+4. **Configurar o Nome e a Região do Bucket**:
+   - Em **Bucket name**, insira um nome exclusivo para o bucket (por exemplo, `my-s3-bucket-projeto`).
+   - Selecione a **região da AWS** onde o bucket será criado. Certifique-se de escolher a região mais próxima para reduzir latência e custos.
+
+5. **Configurações de Permissões**:
+   - Por padrão, os buckets são privados. Se quiser alterar as permissões, você pode modificar as políticas para acesso público ou configurar permissões específicas mais tarde.
+   - Caso o bucket deva ser público (exemplo, para armazenar arquivos acessíveis pela web), desmarque a opção de bloquear todo o acesso público e configure permissões adequadas.
+
+6. **Configurar Criptografia (Opcional)**:
+   - Você pode habilitar a **Server-side encryption** para garantir que os arquivos sejam criptografados automaticamente quando armazenados no bucket.
+
+7. **Configurações Avançadas (Opcional)**:
+   - Caso necessário, você pode habilitar o **Versioning** (controle de versões) para que o bucket armazene múltiplas versões dos mesmos arquivos, ou **Logging** para registrar acessos ao bucket.
+
+8. **Criar o Bucket**:
+   - Após definir as configurações, clique em **Create bucket**.
+   - Seu bucket será criado e estará pronto para uso.
+
+9. **Upload de Arquivos**:
+   - Para fazer upload de arquivos, navegue até o bucket recém-criado e clique em **Upload**.
+   - Selecione os arquivos do seu computador e clique em **Upload**.
+
+10. **Configurar Políticas de Acesso (Opcional)**:
+   - Para definir permissões e acessos ao bucket, navegue até a aba **Permissions** do bucket.
+   - Lá você pode configurar políticas de bucket, definir controle de acesso granular, e gerenciar permissões públicas ou privadas.
+
+<h3>Deploy da API</h3>
 <p>Como clonar o projeto:</p>
 
 <ol type="1">
