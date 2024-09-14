@@ -150,7 +150,7 @@ docker compose up
   <li>Comunicação e planejamento</li>
 </ul>
 
-<h2 id="liçoes aprendidas">❗ Dificuldades Conhecidas</h2>
+<h2 id="liçoes aprendidas">❗ liçoes aprendidas</h2>
 <ul>
   <li>Importância do planejamento colaborativo</li>
   <li>Gestão eficiente de tempo</li>
